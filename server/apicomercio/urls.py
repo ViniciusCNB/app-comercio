@@ -11,4 +11,5 @@ router.register('carrinho', CarrinhoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('carrinho/<int:pk>/detalhes', CarrinhoViewSet.as_view({'get': 'get_cliente_e_produto'}), name='carrinho-detalhes') # Rota para o método que retorna os nomes de cliente e produto dado um carrinho
 ]

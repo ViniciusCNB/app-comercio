@@ -30,3 +30,19 @@ class CarrinhoViewSet(ModelViewSet):
         valor_total_carrinho = valor_unit_produto * qntd_produto
         serializer.save(valor_total_carrinho = valor_total_carrinho)
 
+    # Método para retornar o nome do cliente e o nome do produto, dado um ID de carrinho
+    def get_cliente_e_produto(self, request, *args, **kwargs):
+        # OBS: *args e **kwargs -> usados para passar um número variável de argumentos para uma função
+        carrinho_id = self.kwargs.get('pk')
+
+        try:
+            carrinho = Carrinho.objects.get(pk = carrinho_id)
+            nome_cliente = carrinho.cpf_cliente.nome_cliente
+            nome_produto = carrinho.id_produto.nome_produto
+            response_data = {
+                'nome_cliente': nome_cliente,
+                'nome_produto': nome_produto,
+            }
+            return Response(response_data)
+        except Carrinho.DoesNotExist:
+            return Response({'message': 'Carrinho não encontrado.'})
