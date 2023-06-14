@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from comercio.views import ProdutoViewSet, ClienteViewSet, CarrinhoViewSet
+from apicomercio.views import ProdutoViewSet, ClienteViewSet, CarrinhoViewSet
 
 # É em urls.py que definimos as urls da nossa aplicação
 

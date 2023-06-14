@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from comercio.models import Produto, Cliente, Carrinho
+from apicomercio.models import Produto, Cliente, Carrinho
 
 # Os serializers ajudam a converter os tipos complexos ou instâncias de modelo em tipos de dados Python nativos que podem ser facilmente renderizados em JSON ou XML ou outros tipos de conteúdo. Eles também fazem o caminho inverso.
 

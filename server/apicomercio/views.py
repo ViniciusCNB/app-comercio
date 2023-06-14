@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
-from comercio.models import Produto, Cliente, Carrinho
-from comercio.serializers import ProdutoSerializer, ClienteSerializer, CarrinhoSerializer
+from apicomercio.models import Produto, Cliente, Carrinho
+from apicomercio.serializers import ProdutoSerializer, ClienteSerializer, CarrinhoSerializer
 
 # É em views.py que ficam os serviços da aplicação
 
